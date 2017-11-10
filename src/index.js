@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.scss'
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
-class App extends Component {
-  render(){
-    return(
-      <div>
-      </div>
-    )
-  }
-}
+import App from './components/app';
+import reducers from './reducers';
+require('./style.scss');
 
-ReactDOM.render(<App />,document.getElementById('root'))
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.getElementById('root')
+);

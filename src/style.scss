@@ -1,13 +1,17 @@
-:root { 
-  --white: #FFF;
+.inital-text{
+  display: block;
+  margin-top: 15px;
 }
 
-*{
-  margin: 0;
-  padding: 0;
+.list-group-item{
+  cursor: pointer;
+
+  &.active{
+    border-color: transparent;
+    background-color: #E33022;
+  }
 }
 
-html, body{
-  height: 100%;
-  width: 100%;
+.card-block{
+  padding: 30px 0;
 }
